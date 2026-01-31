@@ -152,8 +152,8 @@ if page == "🏠 Home Dashboard":
         # Appointments by shift
         with col2:
             st.subheader("🕒 Appointments by Shift")
-            if 'appointmentshift' in df.columns:
-                shift_data = df['appointmentshift'].value_counts()
+            if 'appointment_shift' in df.columns:
+                shift_data = df['appointment_shift'].value_counts()
                 fig = px.pie(
                     values=shift_data.values,
                     names=shift_data.index,
@@ -161,7 +161,7 @@ if page == "🏠 Home Dashboard":
                 )
                 st.plotly_chart(fig, use_container_width=True)
             else:
-                st.info("appointmentshift column not found in dataset.")
+                st.info("appointment shift column not found in dataset.")
 
 # 🎯 PAGE 2: NO-SHOW PREDICTOR
 elif page == "🎯 No-Show Predictor":
@@ -196,7 +196,7 @@ elif page == "🎯 No-Show Predictor":
                 specialty = st.selectbox("Specialty", specialty_options)
                 gender = st.selectbox("Gender", ['F', 'M', 'I'])
                 age = st.slider("Age", 0, 100, 30)
-                appointmentshift = st.selectbox(
+                appointment_shift = st.selectbox(
                     "Appointment Shift",
                     ['morning', 'afternoon']
                 )
