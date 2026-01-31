@@ -324,8 +324,18 @@ elif page == "🎯 No-Show Predictor":
                         if 'unknown' not in le.classes_:
                             le.classes_ = np.append(le.classes_, 'unknown')
                         X_input.loc[unknown_mask, col] = 'unknown'
-                    X_input[col] = le.transform(X_input[col])
-
+                    X_input[col] = le.transform(X_input[col]).astype(int)
+                    #DEBUG : Check dtype
+                    if st.sidebar.checkbox("Debug Dtypes"):
+                        st.write(f"{col}: {X_input[col].dtype}")
+            
+            #Final safety check - convert all columns t numberic
+            non_numeric_cols = X_input.select_dtypes(include=['object', 'string']).columns
+            if len(non_numeric_cols) > 0:
+                st.error(f" Still have non-numeric columns:{list(non_numeric_cols)}")
+                st.write("X_input dtypes:", X_input_dtypes)
+                st.stop()
+                
             # Predict probability using trained model
             model = noshow_pipeline['model']
             risk_prob = model.predict_proba(X_input)[0][1]
