@@ -549,8 +549,8 @@ elif page == "👨‍💻 About Project":
     ## 🎯 Medical Appointment No-Show Predictor & Demand Forecaster
 
     ### 📌 Project Overview
-    **Domain:** Healthcare Operations | Resource Management
-    **Challenge:** 31.8% no-show rate causing revenue loss & inefficient staffing
+    **Domain:** Healthcare Operations
+    **Challenge:** 31.8% no-show rate causing revenue loss
 
     ### 📊 Technologies Used
     ```text
