@@ -117,7 +117,7 @@ if page == "🏠 Home Dashboard":
         col1, col2, col3, col4 = st.columns(4)
 
         total_appointments = len(df)
-        noshow_rate = df['noshow'].mean() * 100
+        noshow_rate = df['no_show'].mean() * 100
 
         col1.metric("📅 Total Appointments", f"{total_appointments:,}")
         col2.metric("❌ No-Show Rate", f"{noshow_rate:.1f}%")
@@ -133,7 +133,7 @@ if page == "🏠 Home Dashboard":
             st.subheader("📊 No-Show by Specialty")
             if 'specialty' in df.columns:
                 top_specialties = (
-                    df.groupby('specialty')['noshow']
+                    df.groupby('specialty')['no_show']
                     .mean()
                     .sort_values(ascending=False)
                     .head(8)
@@ -505,7 +505,7 @@ elif page == "📊 Business Insights":
 
         with col1:
             if "rainintens" in df.columns:
-                rain_data = df.groupby("rainintens")["noshow"].mean() * 100
+                rain_data = df.groupby("rainintens")["no_show"].mean() * 100
                 fig = px.bar(
                     x=rain_data.index,
                     y=rain_data.values,
@@ -518,7 +518,7 @@ elif page == "📊 Business Insights":
 
         with col2:
             if "disability" in df.columns:
-                disability_data = df.groupby("disability")["noshow"].mean() * 100
+                disability_data = df.groupby("disability")["no_show"].mean() * 100
                 fig = px.bar(
                     x=disability_data.index,
                     y=disability_data.values,
