@@ -291,7 +291,7 @@ elif page == "🎯 No-Show Predictor":
                 'hypertension': hypertension,
                 'diabetes': diabetes,
                 'alcoholism': alcoholism,
-                'handicaps': 0,
+                'handicap': 0,
                 'scholarship': 0,
                 'sms_received': sms_received,
                 'day_week': day_week,
