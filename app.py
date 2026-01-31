@@ -450,11 +450,12 @@ elif page == "📊 Business Insights":
     # High-level story numbers (tune for PPT if needed)
     col1, col2 = st.columns(2)
     with col1:
-        st.metric("💰 Potential Savings (25% fewer no-shows)", "$125K / year")
-        st.metric("👥 High-Risk Patients Today (estimate)", "2,847")
+        st.metric("📅 Total Appointments", "109,593")
+        st.metric("🎯 Overall No-Show Rate", "31.78%")
+
     with col2:
-        st.metric("📅 Target Staff Utilization", "≈ 85%")
-        st.metric("🌦️ Weather Effect", "+12% no-shows on rainy days")
+        st.metric("💰 Total No-Show Loss", "$2.79M")
+        st.metric("💰 Savings if No-Shows Reduce", "$696,640 / year")
 
     st.markdown("---")
 
