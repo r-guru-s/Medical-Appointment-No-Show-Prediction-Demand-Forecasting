@@ -41,6 +41,8 @@ medical-appointment-prediction/
 
 ├── demand_regressor_final.pkl    # Pre-trained forecaster
 
-├── Medical_appointment_data.csv    # RAW DATA
+├── Medical_appointment_data.csv    # RAW Data
+
+├── Medical_appointment_features.csv    # Clean Data
 
 └── README.md                    
