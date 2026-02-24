@@ -235,6 +235,14 @@ elif page == "🎯 No-Show Predictor":
                     [0, 1],
                     format_func=lambda x: "Yes" if x else "No"
                 )
+            st.markdown("### 🌤️ Weather Forecast (Today's)")
+            col6, col7 = st.columns(2)
+            with col6:
+                avg_temp_day = st.slider("Avg Temp °C", 15, 35, 22)
+                max_temp_day = st.slider("Max Temp °C", 18, 38, 25)
+            with col7:
+                heat_intens = st.selectbox("Heat Intensity", ['cool', 'mild', 'hot'])
+                rain_intens = st.selectbox("Rain Intensity", ['no_rain', 'light', 'heavy'])
 
             submitted = st.form_submit_button("Predict Risk", type="primary")
 
@@ -250,14 +258,14 @@ elif page == "🎯 No-Show Predictor":
                 age_group = '12_to_60'
 
             # we do not know future weather in this form, so keep neutral
-            avg_temp_day = 18.0
+            #avg_temp_day = 18.0
             avg_rain_day = 0.0
-            max_temp_day = 22.0
+            #max_temp_day = 22.0
             max_rain_day = 0.0
             rainy_day_b4 = 0
             storm_day_b4 = 0
-            rain_intens = 'no_rain'
-            heat_intens = 'cool'
+            #rain_intens = 'no_rain'
+            #heat_intens = 'cool'
 
             # appointment time: choose a mid value
             appointment_time = 12.0
