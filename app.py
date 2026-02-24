@@ -250,14 +250,14 @@ elif page == "🎯 No-Show Predictor":
                 age_group = '12_to_60'
 
             # we do not know future weather in this form, so keep neutral
-            avg_temp_day = 25.0
+            avg_temp_day = 18.0
             avg_rain_day = 0.0
-            max_temp_day = 30.0
+            max_temp_day = 22.0
             max_rain_day = 0.0
             rainy_day_b4 = 0
             storm_day_b4 = 0
             rain_intens = 'no_rain'
-            heat_intens = 'mild'
+            heat_intens = 'cool'
 
             # appointment time: choose a mid value
             appointment_time = 12.0
